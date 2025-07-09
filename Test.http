@@ -1,0 +1,41 @@
+@URI = http://localhost:5146/api/persons
+
+###
+POST {{URI}} HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Calvin Briggs",
+    "age": 22,
+    "dateOfBirth": "2012-10-14",
+    "addressId": 3
+}
+
+###
+put {{URI}}/01f66326-07e1-4917-a5c6-1fe7d4150665 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Henry Goodman",
+    "age": 20,
+    "dateOfBirth": "2011-11-12",
+    "addressId": 2
+}
+
+###
+GET {{URI}} HTTP/1.1
+Accept: application/json
+
+###
+GET {{URI}}/01f66326-07e1-4917-a5c6-1fe7d4150665 HTTP/1.1
+Accept: application/json
+
+###
+GET {{URI}}/pagination?page=3&size=3 HTTP/1.1
+Accept: application/json
+
+###
+DELETE {{URI}}/b08386ec-f376-4963-88b0-7184a4a29e52 HTTP/1.1
+Accept: application/json
